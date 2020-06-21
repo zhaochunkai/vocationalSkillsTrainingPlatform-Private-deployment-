@@ -1,0 +1,14 @@
+version: '3.2'
+services:
+  frontend:
+    image: ${IMAGE_NAME}
+    container_name: ${CONTAINER_NAME}
+    expose:
+      - 80
+    networks:
+      - internal-network
+    restart: always
+
+networks: 
+  internal-network:
+    external: true

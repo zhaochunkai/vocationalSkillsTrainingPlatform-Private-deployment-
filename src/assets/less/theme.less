@@ -1,0 +1,213 @@
+// 框架宽高
+@navigationBar-height: 100px;     // 顶部导航条高度
+@menu-width: 200px;     // 左侧菜单宽度
+// @card-height:`document.body.clientHeight-195+'px'`;
+// .el-card{
+//     height:@card-height;
+//     overflow:scroll;
+// }
+.frame-mix();
+.frame-mix(){
+    // ====================  顶部导航条
+    .navigationBar-theme{
+        .logo, .item-wrap .item, 
+        .el-tabs__item, .el-tabs__nav-next, .el-tabs__nav-prev{
+            height: @navigationBar-height;
+            line-height: @navigationBar-height;
+        }
+    }
+
+    // ====================  左侧菜单
+    .menu-aside-theme{
+        padding-top: @navigationBar-height;
+    }
+    .menu-theme{
+        width: @menu-width;
+        .menu-list:not(.el-menu--collapse) {
+            width: @menu-width;
+        }
+    }
+
+     // ===================  路由切换tab
+     .router-tabs-theme .el-tabs__header{
+        top: @navigationBar-height;
+        left: @menu-width;
+    }
+    .router-tabs-header-theme{
+        top: @navigationBar-height;
+        left: @menu-width;
+    }
+
+    
+    // ===================  main
+    .menu-main-theme{
+        padding-top: @navigationBar-height;
+        margin-left: @menu-width;
+    }
+}
+
+// 配色
+.theme-blue{
+    @color: #4593bf;    
+    @color-hover: #3184b3;  
+    @color-title: #30759c;  
+    @color-hover-info: #fff;  
+
+    .theme-mix();
+}
+// .theme-green{
+//     @color: #45b3bf;    // 主题颜色
+//     @color-hover: #3fa3ae;   // 主题颜色 hover/active 效果 
+//     @color-title: #3a96a0;     // 左边菜单的标题颜色
+
+//     .theme-mix();
+// }
+// .theme-red{
+//     @color: #ca536a;    
+//     @color-hover: #cc6c7e;   
+//     @color-title: #b54a5f; 
+
+//     .theme-mix();
+// }
+
+.theme-mix(){
+    // ====================  登录界面
+    .login-title-theme{
+        color: @color;
+    }
+
+
+    // ====================  顶部导航条
+    .navigationBar-theme{
+        .logo, .item-wrap .item, 
+        .el-tabs__item, .el-tabs__nav-next, .el-tabs__nav-prev{
+            height: @navigationBar-height;
+            line-height: @navigationBar-height;
+        }
+        background-color: @color;
+        .el-tabs__item{
+            background-color: @color;
+            &:hover,&.is-active{
+                // background-color: @color-hover;
+                .t-nav-icon{
+                    background-color: @color-hover;
+                }
+            }
+        }
+    }
+
+
+
+    // ====================  左侧菜单
+    .menu-aside-theme{
+        background-color: @color;
+    }
+    .menu-theme{
+        width: @menu-width;
+        .menu-list:not(.el-menu--collapse) {
+            width: @menu-width;
+        }
+        .el-menu{
+            background-color: @color;
+        }
+        .el-submenu__title:hover, .el-menu-item:focus, .el-menu-item:hover, .el-menu-item.is-active {
+            background-color: @color-hover;
+        }
+        .menu-title{
+            background-color: @color-title;
+        }
+    }
+
+    // ====================  element-ui组件
+    .el-button--default:focus, .el-button--default:hover, .el-button--default:active,
+    .el-button.is-plain:focus, .el-button.is-plain:hover {
+        color: @color;
+        border-color: @color;
+    }
+    .el-button--primary, .el-radio__input.is-checked .el-radio__inner,
+    .el-radio-button__orig-radio:checked+.el-radio-button__inner,
+    .el-checkbox__input.is-checked .el-checkbox__inner, .el-checkbox__input.is-indeterminate .el-checkbox__inner,
+    .el-switch.is-checked .el-switch__core{
+        border-color: @color;
+        background-color: @color;
+        color: #fff;
+    }
+    .el-button--primary:focus, .el-button--primary:hover{
+        color: #fff;
+        border-color: @color-hover;
+        background: @color-hover;
+    }
+    .el-button--info.is-plain{
+        color:@color;
+        border-color: @color-hover;
+    }
+    .el-button--info.is-plain:focus, .el-button--info.is-plain:hover{
+        color:@color;
+        border-color: @color-hover;
+        background: @color-hover-info;
+    }
+    .el-button--text, .el-radio__input.is-checked+.el-radio__label, 
+    .el-checkbox.is-bordered.is-checked, .el-checkbox__input.is-checked+.el-checkbox__label,
+    .el-tag, .el-tabs__item.is-active, .el-tabs--border-card>.el-tabs__header .el-tabs__item.is-active,
+    .el-step__head.is-finish, .el-step__title.is-finish, .el-step__description.is-finish,
+    .el-select-dropdown__item.selected, .el-cascader-menu__item.is-active,
+    .time-select-item.selected:not(.disabled), .el-time-panel__btn.confirm, .el-month-table td.current:not(.disabled) .cell,
+    .el-date-picker__header-label.active, .el-year-table td.current:not(.disabled) .cell,
+    .el-date-table td.today span{
+        color: @color;
+    }
+    .el-button--text:focus, .el-button--text:hover, .el-tabs__item:hover,
+    .el-pager li:hover, .el-pagination.is-background .el-pager li:not(.disabled):hover,
+    .el-tabs--border-card>.el-tabs__header .el-tabs__item:not(.is-disabled):hover,
+    .el-breadcrumb__inner a:hover, .el-breadcrumb__inner.is-link:hover,
+    .el-input-number__decrease:hover, .el-input-number__increase:hover,
+    .el-transfer-panel__item:hover, .el-radio-button__inner:hover,
+    .el-date-picker__header-label:hover,.el-year-table td .cell:hover, 
+    .el-month-table td .cell:hover, .el-picker-panel__icon-btn:hover, .el-picker-panel__shortcut:hover,
+    .el-dropdown-menu__item:focus, .el-dropdown-menu__item:not(.is-disabled):hover{
+        color: @color-hover;
+    }
+    .el-pagination.is-background .el-slider__bar, .el-progress-bar__inner,
+    .el-badge__content, .el-tabs__active-bar, .el-pagination.is-background .el-pager li:not(.disabled).active,
+    .el-date-table td.available:hover span,
+    .el-date-table td.end-date span, .el-date-table td.start-date span,
+    .el-date-table td.selected span, .el-date-table td.current:not(.disabled) span{
+        color: #fff;
+        background-color: @color;
+    }
+    .el-form-item.is-error .el-input__inner, .el-form-item.is-error .el-textarea__inner, 
+    .el-message-box__input input.invalid, .el-input.is-active .el-input__inner, 
+    .el-select .el-input.is-focus .el-input__inner,.el-checkbox.is-bordered.is-checked,
+    .el-textarea__inner:focus, .el-slider__button, .el-step__icon.is-text,
+    .el-cascader .el-input.is-focus .el-input__inner{
+        border-color: @color;
+    }
+    .el-form-item.is-error .el-input__inner:focus, .el-form-item.is-error .el-textarea__inner:focus, 
+    .el-message-box__input input.invalid:focus, .el-input__inner:focus, 
+    .el-pagination__sizes .el-input .el-input__inner:hover, .el-checkbox__inner:hover, .el-radio__inner:hover{
+        border-color: @color-hover;
+    }
+    .el-input-group__append button.el-button, .el-input-group__append div.el-select .el-input__inner, 
+    .el-input-group__append div.el-select:hover .el-input__inner, .el-input-group__prepend button.el-button, 
+    .el-input-group__prepend div.el-select .el-input__inner, .el-input-group__prepend div.el-select:hover .el-input__inner {
+        border-color: transparent;
+        background-color: transparent;
+        color: inherit;
+    }
+    .el-radio-button:focus:not(.is-focus):not(:active):not(.is-disabled){
+        box-shadow: 0 0 2px 2px @color-hover;
+    }
+    .el-radio-button__orig-radio:checked+.el-radio-button__inner{
+        box-shadow: 0px 0 0 0 @color;
+    }
+    .el-cascader__label:focus,.el-input-number__decrease:focus, .el-input-number__increase:focus, 
+    .el-breadcrumb__inner a, .el-breadcrumb__inner.is-link{
+        outline-color: @color-hover;
+    }
+    .el-loading-spinner .path{
+        stroke: @color;
+    }
+    .el-menu--horizontal>.el-menu-item.is-active{
+        border-bottom-color: @color-hover;
+    }
+}

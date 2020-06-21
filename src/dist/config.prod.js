@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.pageSize=exports.pageSizes=exports.baseURL=void 0;var baseURL="http://ets-private.gd";exports.baseURL=baseURL;var pageSizes=[10,20,50];exports.pageSizes=pageSizes;var pageSize=10;exports.pageSize=pageSize;
