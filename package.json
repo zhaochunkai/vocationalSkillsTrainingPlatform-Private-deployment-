@@ -18,7 +18,7 @@
     "file-saver": "^2.0.2",
     "flv": "0.0.1",
     "flv.js": "^1.5.0",
-    "moment": "^2.25.3",
+    "moment": "^2.29.2",
     "pdfjs-dist": "^2.2.228",
     "v-charts": "^1.19.0",
     "videojs-flvjs": "^0.2.0",
